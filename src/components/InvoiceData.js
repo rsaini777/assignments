@@ -98,7 +98,7 @@ function InvoiceData({ changescreen, setChangescreen, editable, setEditable }) {
                   </div>
                   <div>
                     <div>Payment date</div>
-                    <div>{data.input.payment_due}</div>
+                    <div>{data.input.payment_date}</div>
                   </div>
                 </div>
                 <div className="">

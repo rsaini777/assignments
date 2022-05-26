@@ -44,7 +44,7 @@ function InvoiceModal({
     zip: "",
     country: "",
     invoice_date: "",
-    payment_due: "",
+    payment_date: "",
     product_description: "",
     item_name: "",
     qty: "",
@@ -106,8 +106,8 @@ function InvoiceModal({
         className="col form-control"
       />
       <input
-        value={input.payment_due}
-        onChange={(e) => setInput({ ...input, payment_due: e.target.value })}
+        value={input.payment_date}
+        onChange={(e) => setInput({ ...input, payment_date: e.target.value })}
         type="text"
         className="col form-control"
       />

@@ -1,0 +1,31 @@
+.invoice-data{
+    width: 50%;
+    height: 100px;
+    background-color: orangered;
+    border-radius: 9px;
+    cursor: pointer;
+}
+.invoice{
+    width: 50%;
+}
+
+.invoice-card{
+    width: 50%;
+    background-color: orangered;
+    border-radius: 9px; 
+}
+
+.invoice-card-card{
+    width: 97%;
+    background-color: grey;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+}
+.invoice-card-card-card{
+    width: 97%;
+    background-color: black;
+    color: wheat;
+    border-bottom-left-radius: 9px; 
+    border-bottom-right-radius: 9px; 
+   
+}

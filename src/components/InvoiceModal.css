@@ -1,1 +1,8 @@
 
+.main{
+    border: 1px solid grey;
+}
+
+.error{
+    color: #d8000c;
+}

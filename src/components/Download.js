@@ -13,7 +13,7 @@ function Download({rootid}) {
     }
   return (
     <>
-        <button className='mx-3' onClick={DownloadPage}>Download</button>
+        <button className='mx-3 btn btn-secondary btn-lg mb-5' onClick={DownloadPage}>Download</button>
     </>
   )
 }

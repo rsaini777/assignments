@@ -6,7 +6,7 @@ function SendToMail({email}) {
     }
   return (
     <>
-    <button className='mx-3' onClick={sentMail}>Send Via. Mail</button>
+    <button className='mx-3 btn btn-primary btn-lg mb-5' onClick={sentMail}>Send Via. Mail</button>
     </>
   )
 }

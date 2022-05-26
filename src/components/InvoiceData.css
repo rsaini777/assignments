@@ -1,31 +1,53 @@
 .invoice-data{
-    width: 50%;
+   
     height: 100px;
-    background-color: orangered;
+    background-color: #cfe2ce;
     border-radius: 9px;
     cursor: pointer;
 }
-.invoice{
-    width: 50%;
+.wide {
+    width: 30%;
 }
+.botton {
+    background-color: #2d452f;
+    color: #ffffff;
+}
+.back {
+    background-color: #2d452f;
+    width: 10%;
+    color: #ffffff;
+    border-radius:5px;
+    cursor: pointer;
+}
+
 
 .invoice-card{
     width: 50%;
-    background-color: orangered;
+    background-color: #145858;
     border-radius: 9px; 
+    color: #ffffff;
 }
 
 .invoice-card-card{
-    width: 97%;
-    background-color: grey;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
+   
+    background-color: #f7b318;
+   border-radius: 10px;
 }
 .invoice-card-card-card{
-    width: 97%;
-    background-color: black;
-    color: wheat;
-    border-bottom-left-radius: 9px; 
-    border-bottom-right-radius: 9px; 
+    
+    background-color: #c8e0ca;
+    color: black;
    
+    height:3rem;
+   
+}
+
+.font1{
+    font-size:20px;
+}
+.font2{
+    font-size:18px;
+}
+.invoice-card[label] {
+    color: #f7b318;
 }

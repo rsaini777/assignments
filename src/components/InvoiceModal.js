@@ -52,86 +52,88 @@ function InvoiceModal({
     tax: "",
     price: "",
   });
-  const error = {
-    client_name: "",
-    client_email: "",
-    street_address: "",
-    city: "",
-    zip: "",
-    country: "",
-    invoice_date: "",
-    payment_date: "",
-    product_description: "",
-    item_name: "",
-    qty: "",
-    tax: "",
-    price: "",
-  };
-  console.log(error)
+  const [errors_client_name,setErrors_client_name]=useState("")
+  const [errors_client_email,setErrors_client_email]=useState("")
+  const [errors_street_address,setErrors_street_address]=useState("")
+  const [errors_city,setErrors_city]=useState("")
+  const [errors_zip,setErrors_zip]=useState("")
+  const [errors_country,setErrors_country]=useState("")
+  const [errors_invoice_date,setErrors_invoice_date]=useState("")
+  const [errors_payment_date,setErrors_payment_date]=useState("")
+  const [errors_product_description,setErrors_product_description]=useState("")
+  const [errors_item_name,setErrors_itme_name]=useState("")
+  const [errors_qty,setErrors_qty]=useState("")
+  const [errors_tax,setErrors_tax]=useState("")
+  const [errors_price,setErrors_price]=useState("")
+  
+  
+
   const showResult = () => {
     let emailre = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     let numre = /^\d*(\.\d+)?$/
     let emailresult=emailre.test(input.client_email)
     if (input.client_name=="") {
-      error.client_name = "This field is required";
+     
+      setErrors_client_name("This Field Is Required") 
     } else if (input.client_name < 4) {
-      error.client_name = "Please Use Valid Name";
+      setErrors_client_name("Please Use Valid Name")
     }
     if (input.client_email=="") {
-      error.client_email = "This field is required";
+      setErrors_client_email("This Field Is Required")  
     } else if (!emailresult) {
-      error.client_email = "Please Use Valid Email";
+      
+      setErrors_client_email("Please Use Valid Email")
     }
     if (input.street_address=="") {
-      error.street_address = "This field is required";
+      setErrors_street_address("This Field Is Required") 
     } else if (input.street_address < 4) {
-      error.street_address = "Please Use Valid Street_Address";
+      setErrors_street_address("Please Use Valid Street_Address")
     }
     if (input.city=="") {
-      error.city = "This field is required";
+      setErrors_city("This Field Is Required") 
     } else if (input.city < 4) {
-      error.city = "Please Use Valid City";
+      setErrors_city("Please Use Valid City")
     }
     if (input.zip=="") {
-      error.city = "This field is required";
+      setErrors_zip("This Field Is Required") 
     } else if (!numre.test(input.zip)) {
-      error.zip = "Please Use Valid Zip";
+      setErrors_zip("Please Use Valid Zip")
     }
     if (input.country=="") {
-      error.country = "This field is required";
+      setErrors_country("This Field Is Required") 
     } else if (input.country < 4) {
-      error.country = "Please Use Valid State";
+      setErrors_country("Please Use Valid State")
     }
     if (input.invoice_date=="") {
-      error.invoice_date = "This field is required";
+      setErrors_invoice_date("This Field Is Required") 
     }
     if (input.payment_date=="") {
-      error.payment_date = "This field is required";
+      setErrors_payment_date("Please Use Valid Email")  
     }
     if (input.product_description=="") {
-      error.product_description = "This field is required";
+      setErrors_product_description("This Field Is Required") 
     } else if (input.product_description < 10) {
-      error.product_description = "Please Use Valid Product_Description";
+      setErrors_product_description("Please Use Valid Product_Description")
     }
     if (input.item_name=="") {
-      error.item_name = "This field is required";
+      setErrors_itme_name("This Field Is Required") 
     } else if (input.item_name < 4) {
-      error.item_name = "Please Use Valid Item_Name";
+      setErrors_itme_name("Please Use Valid Item_Name")
     }
     if (input.qty=="") {
-      error.qty = "This field is required";
-    } else if (!numre.test(input.zip)) {
-      error.qty = "Please Use Valid Qty";
+      setErrors_qty("This Field Is Required") 
+    } else if (!numre.test(input.qty)) {
+      setErrors_qty("Please Use Valid Qty")
     }
     if (input.tax=="") {
-      error.tax = "This field is required";
-    } else if (!numre.test(input.zip)) {
-      error.tax = "Please Use Valid Tax";
+      setErrors_tax("This Field Is Required") 
+    } else if (!numre.test(input.tax)) {
+      setErrors_tax("Please Use Valid Tax")
     }
     if (input.price=="") {
-      error.price = "This field is required";
-    } else if (!numre.test(input.zip)) {
-      error.price = "Please Use Valid Price";
+      setErrors_price("This Field Is Required")  
+    } else if (!numre.test(input.price)) {
+      setErrors_price("Please Use Valid Price")
     } else {
       if (editable) {
         editData();
@@ -157,7 +159,7 @@ function InvoiceModal({
               className="col form-control"
               id="name"
             />
-            <label className="error">{error.client_name}</label>
+            <label className="errors">{errors_client_name}</label>
           </div>
 
           <div className="col-6">
@@ -172,7 +174,7 @@ function InvoiceModal({
               id="name"
               required
             />
-            <label className="error">{error.client_email}</label>
+            <label className="errors">{errors_client_email}</label>
           </div>
         </div>
         <div className="row mt-4">
@@ -187,7 +189,7 @@ function InvoiceModal({
               className="col form-control"
               id="name"
             />
-            <label className="error">{error.street_address}</label>
+            <label className="errors">{errors_street_address}</label>
           </div>
         </div>
 
@@ -200,7 +202,7 @@ function InvoiceModal({
               type="text"
               className="col form-control"
             />
-            <label className="error">{error.city}</label>
+            <label className="errors">{errors_city}</label>
           </div>
           <div className="col-4">
             <label for="name">Zip:</label>
@@ -210,7 +212,7 @@ function InvoiceModal({
               type="text"
               className="col form-control"
             />
-            <label className="error">{error.zip}</label>
+            <label className="errors">{errors_zip}</label>
           </div>
           <div className="col-4">
             <label for="name">State:</label>
@@ -220,7 +222,7 @@ function InvoiceModal({
               type="text"
               className="col form-control"
             />
-            <label className="error">{error.country}</label>
+            <label className="errors">{errors_country}</label>
           </div>
         </div>
 
@@ -235,7 +237,7 @@ function InvoiceModal({
               type="date"
               className="col form-control"
             />
-            <label className="error">{error.invoice_date}</label>
+            <label className="errors">{errors_invoice_date}</label>
           </div>
           <div className="col-6">
             <label for="name">Payment date:</label>
@@ -247,7 +249,7 @@ function InvoiceModal({
               type="date"
               className="col form-control"
             />
-            <label className="error">{error.payment_date}</label>
+            <label className="errors">{errors_payment_date}</label>
           </div>
         </div>
 
@@ -263,7 +265,7 @@ function InvoiceModal({
                 setInput({ ...input, product_description: e.target.value })
               }
             ></textarea>
-            <label className="error">{error.product_description}</label>
+            <label className="errors">{errors_product_description}</label>
           </div>
         </div>
 
@@ -278,7 +280,7 @@ function InvoiceModal({
               type="text"
               className=" form-control"
             />
-            <label className="error">{error.item_name}</label>
+            <label className="errors">{errors_item_name}</label>
           </div>
           <div className="col-3">
             <label for="name">Item quantity:</label>
@@ -288,7 +290,7 @@ function InvoiceModal({
               type="number"
               className=" form-control"
             />
-            <label className="error">{error.qty}</label>
+            <label className="errors">{errors_qty}</label>
           </div>
           <div className="col-3">
             <label for="name">Tax percentage:</label>
@@ -298,7 +300,7 @@ function InvoiceModal({
               type="text"
               className=" form-control"
             />
-            <label className="error">{error.tax}</label>
+            <label className="errors">{errors_tax}</label>
           </div>
           <div className="col-3">
             <label for="name">Item Price:</label>
@@ -308,7 +310,7 @@ function InvoiceModal({
               type="text"
               className=" form-control"
             />
-            <label className="error">{error.price}</label>
+            <label className="errors">{errors_price}</label>
           </div>
         </div>
 
